@@ -261,21 +261,21 @@ class FormBuilderTypeAhead<T> extends FormBuilderFieldDecoration<T> {
 
   /// Creates text field that auto-completes user input from a list of items
   FormBuilderTypeAhead({
-    Key? key,
+    super.key,
     //From Super
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    bool enabled = true,
-    FocusNode? focusNode,
-    FormFieldSetter<T>? onSaved,
-    FormFieldValidator<T>? validator,
-    InputDecoration decoration = const InputDecoration(),
-    required String name,
+    AutovalidateMode super.autovalidateMode = AutovalidateMode.disabled,
+    super.enabled,
+    super.focusNode,
+    super.onSaved,
+    super.validator,
+    super.decoration,
+    required super.name,
     required this.itemBuilder,
     required this.suggestionsCallback,
-    T? initialValue,
-    ValueChanged<T?>? onChanged,
-    ValueTransformer<T?>? valueTransformer,
-    VoidCallback? onReset,
+    super.initialValue,
+    super.onChanged,
+    super.valueTransformer,
+    super.onReset,
     this.animationDuration = const Duration(milliseconds: 500),
     this.animationStart = 0.25,
     this.autoFlipDirection = false,
@@ -303,18 +303,6 @@ class FormBuilderTypeAhead<T> extends FormBuilderFieldDecoration<T> {
     this.transitionBuilder,
   })  : assert(T == String || selectionToTextTransformer != null),
         super(
-          key: key,
-          initialValue: initialValue,
-          name: name,
-          validator: validator,
-          valueTransformer: valueTransformer,
-          onChanged: onChanged,
-          autovalidateMode: autovalidateMode,
-          onSaved: onSaved,
-          enabled: enabled,
-          onReset: onReset,
-          decoration: decoration,
-          focusNode: focusNode,
           builder: (FormFieldState<T?> field) {
             final state = field as FormBuilderTypeAheadState<T>;
             final theme = Theme.of(state.context);
